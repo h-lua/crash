@@ -4,7 +4,5 @@
 require "h-lua"
 -- alias h-lua库别称（参考）
 require "scripts.alias"
--- setup 游戏准备
-require "scripts.setup"
 -- start 游戏主程（必备main函数）
 require "scripts.start"
