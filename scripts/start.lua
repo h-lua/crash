@@ -96,7 +96,7 @@ function main()
                         --测试创建单位，成绩：83万
                         local e = henemy.create({
                             register = true,
-                            unitId = "nfor",
+                            id = "nfor",
                             x = x,
                             y = y,
                             during = during,
