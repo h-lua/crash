@@ -95,20 +95,11 @@ function main()
                     elseif (type == "unit") then
                         --测试创建单位，成绩：83万
                         local e = henemy.create({
-                            register = true,
-                            id = "nfor",
+                            id = "u00U",
                             x = x,
                             y = y,
                             during = during,
                         })
-                        for i = 0, 10 do
-                            hattr.set(e, i * 0.51, {
-                                life = "+1",
-                                attack_white = "+1",
-                                attack_speed = "+1",
-                                move = "+1",
-                            })
-                        end
                     elseif (type == "texttag") then
                         --测试飘浮字，成绩：100万 clear
                         htextTag.create2XY(
