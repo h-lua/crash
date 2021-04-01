@@ -12,8 +12,9 @@ function main()
     local types = {
         var = "变量清空",
         unit = "创建单位",
-        texttag = "创建飘浮字",
-        ttgstyle = "创建带缩放漂浮字",
+        ttg = "创建飘浮字",
+        ttgs = "创建带缩放漂浮字",
+        ttgm = "创建模型漂浮字",
         effect = "创建特效",
         timer = "创建计时器",
     }
@@ -26,8 +27,9 @@ function main()
         测试例子，进入游戏，敲入聊天信息
         -var [concurrent] [frequency] [number]
         -unit [concurrent] [frequency] [number] [during]
-        -texttag [concurrent] [frequency] [number] [during]
-        -ttgstyle [concurrent] [frequency] [number] [during]
+        -ttg [concurrent] [frequency] [number] [during]
+        -ttgs [concurrent] [frequency] [number] [during]
+        -ttgm [concurrent] [frequency] [number] [during]
         -effect [concurrent] [frequency] [number] [during]
         -timer [concurrent] [frequency] [number] [during]
     ]]
@@ -42,8 +44,9 @@ function main()
         if (type == "" or table.includes({
             "var",
             "unit",
-            "texttag",
-            "ttgstyle",
+            "ttg",
+            "ttgs",
+            "ttgm",
             "effect",
             "timer",
             "stop",
@@ -100,7 +103,7 @@ function main()
                             y = y,
                             during = during,
                         })
-                    elseif (type == "texttag") then
+                    elseif (type == "ttgs") then
                         --测试飘浮字，成绩：100万 clear
                         htextTag.create2XY(
                             x, y,
@@ -111,7 +114,7 @@ function main()
                             during,
                             math.random(0, 50)
                         )
-                    elseif (type == "ttgstyle") then
+                    elseif (type == "ttgs") then
                         --测试飘浮字，成绩：100万 clear
                         htextTag.style(
                             htextTag.create2XY(
@@ -127,6 +130,16 @@ function main()
                             10,
                             10
                         )
+                    elseif (type == "ttgm") then
+                        --测试模型漂浮字，成绩：100万 clear
+                        htextTag.model({
+                            msg = tostring(math.random(1, 50000)),
+                            x = x,
+                            y = y,
+                            red = math.random(100, 255),
+                            green = math.random(100, 255),
+                            blue = math.random(100, 255),
+                        })
                     elseif (type == "effect") then
                         --测试特效，成绩：100万 clear
                         heffect.toXY(
