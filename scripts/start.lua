@@ -131,7 +131,7 @@ function main()
                             10
                         )
                     elseif (type == "ttgm") then
-                        --测试模型漂浮字，成绩：100万 clear
+                        --测试模型漂浮字，成绩：50万 clear
                         htextTag.model({
                             msg = tostring(math.random(1, 50000)),
                             x = x,
