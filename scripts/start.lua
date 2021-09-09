@@ -158,12 +158,4 @@ function main()
             )
         end
     end)
-
-    collectgarbage("collect")
-    local remStart = collectgarbage("count")
-    htime.setInterval(2.00, function()
-        collectgarbage("collect")
-        print_mb("========内存消耗->" .. (collectgarbage("count") - remStart))
-        handleDisplay()
-    end)
 end
