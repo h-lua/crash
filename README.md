@@ -14,5 +14,5 @@ git clone https://github.com/hunzsig-warcraft3/h-lua-sdk-crash.git
 
 ### 测试！
 ```
-sdk.exe -t h-lua-sdk-crash
+sdk.exe test h-lua-sdk-crash
 ```
