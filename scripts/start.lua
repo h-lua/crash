@@ -21,18 +21,21 @@ function main()
 
     local var_text = {}
 
-    henemy.set("敌人", nil, { 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 })
+    local tips = hjapi.DzCreateFrameByTagName("TEXT", "StandardSmallTextTemplate", hdzui.origin.game(), "DEBUG-UI", 0)
+    hjapi.DzFrameSetPoint(tips, FRAME_ALIGN_RIGHT_TOP, hdzui.origin.game(), FRAME_ALIGN_RIGHT_TOP, -0.002, -0.04)
+    hjapi.DzFrameSetTextAlignment(tips, TEXT_ALIGN_LEFT)
+    hjapi.DzFrameSetText(tips, string.implode('|n', {
+        "测试例子，进入游戏，敲入聊天信息",
+        "-var [concurrent] [frequency] [number]",
+        "-unit [concurrent] [frequency] [number] [during]",
+        "-ttg [concurrent] [frequency] [number] [during]",
+        "-ttgs [concurrent] [frequency] [number] [during]",
+        "-ttgm [concurrent] [frequency] [number] [during]",
+        "-effect [concurrent] [frequency] [number] [during]",
+        "-timer [concurrent] [frequency] [number] [during]",
+    }))
 
-    --[[
-        测试例子，进入游戏，敲入聊天信息
-        -var [concurrent] [frequency] [number]
-        -unit [concurrent] [frequency] [number] [during]
-        -ttg [concurrent] [frequency] [number] [during]
-        -ttgs [concurrent] [frequency] [number] [during]
-        -ttgm [concurrent] [frequency] [number] [during]
-        -effect [concurrent] [frequency] [number] [during]
-        -timer [concurrent] [frequency] [number] [during]
-    ]]
+    henemy.set("敌人", nil, { 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 })
     hevent.onChat(hplayer.players[1], '-', function(evtData)
         local chatString = evtData.chatString
         local chatOptions = string.explode(' ', chatString)
@@ -151,7 +154,7 @@ function main()
                         --测试计时器，成绩：150万 clear
                         --每个占用 0.1764KB 左右，上限不变则不再增加
                         htime.setTimeout(math.random(1, 50), function(tt)
-                            htime.delTimer(tt)
+                            tt.destroy()
                         end)
                     end
                 end
