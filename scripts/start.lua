@@ -24,8 +24,9 @@ function main()
     local var_text = {}
 
     local tips = hjapi.DzCreateFrameByTagName("TEXT", "StandardSmallTextTemplate", hjapi.DzGetGameUI(), "DEBUG-UI", 0)
-    hjapi.DzFrameSetPoint(tips, FRAME_ALIGN_RIGHT_TOP, hjapi.DzGetGameUI(), FRAME_ALIGN_RIGHT_TOP, -0.002, -0.04)
+    hjapi.DzFrameSetPoint(tips, FRAME_ALIGN_RIGHT_BOTTOM, hjapi.DzGetGameUI(), FRAME_ALIGN_RIGHT_BOTTOM, -0.002, 0.17)
     hjapi.DzFrameSetTextAlignment(tips, TEXT_ALIGN_LEFT)
+    hjapi.DzFrameSetFont(tips, 'fonts.ttf', 10 * 0.001, 0)
     hjapi.DzFrameSetText(tips, string.implode('|n', {
         "测试例子，进入游戏，敲入聊天信息",
         "-var [concurrent] [frequency] [number]",
