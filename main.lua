@@ -6,5 +6,6 @@ require "h-lua"
 require "scripts.alias"
 -- setup
 require "scripts.setup"
+require "scripts.eventReaction"
 -- start 游戏主程（必备main函数）
 require "scripts.start"

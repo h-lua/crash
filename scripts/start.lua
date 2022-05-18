@@ -6,7 +6,7 @@ function main()
 
     SETUP()
     local function _z(u, offset)
-        return hunit.getFlyHeight(u) + hunit.z(u) + 130 + offset
+        return hunit.h(u) + 130 + offset
     end
 
     local running = false
