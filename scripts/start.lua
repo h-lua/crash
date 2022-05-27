@@ -94,8 +94,8 @@ function main()
                         cache = {}
                         return
                     end
-                    local x = math.random(0, 1000)
-                    local y = math.random(0, 1000)
+                    local x = math.random(-500, 500)
+                    local y = math.random(-500, 500)
                     if (type == "var") then
                         --测试全局/局部变量清空，成绩：100万 clear
                         cache[n] = x + y
@@ -109,7 +109,7 @@ function main()
                             y = y,
                             during = during,
                         })
-                    elseif (type == "ttgs") then
+                    elseif (type == "ttg") then
                         --测试飘浮字，成绩：100万 clear
                         htextTag.create2XY(
                             x, y,
@@ -133,8 +133,8 @@ function main()
                                 math.random(0, 50)
                             ),
                             'toggle',
-                            10,
-                            10
+                            math.random(-0.05, 0.05),
+                            math.random(-0.1, 0.1)
                         )
                     elseif (type == "mtg") then
                         --测试模型漂浮字，成绩：100万 clear
